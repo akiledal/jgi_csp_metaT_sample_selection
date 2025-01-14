@@ -38,6 +38,9 @@ glamr_pg <- tbl(pg, "glamr_samples")
 set_35_samples <- glamr_pg %>% 
   filter(StudyID == "set_35") %>% 
   collect() %>% 
+  mutate(NOAA_Site = case_when(NOAA_Site == "WE12-S" ~"WE12",
+                               NOAA_Site == "WE16-WSW" ~"WE16",
+                               .default = NOAA_Site)) %>% 
   write_tsv("~/projects/glamr_queries_and_analyses/202501_jgi_csp_transcriptomes/set_35_metagenomes.tsv")
 
 microcystis_abundance <- tbl(pg, "tax_abund_from_contig_lca_and_abund") %>% 
@@ -45,7 +48,7 @@ microcystis_abundance <- tbl(pg, "tax_abund_from_contig_lca_and_abund") %>%
   mutate(percent_abundance = (abund_w_subtax / 1000000)*100) %>% 
   collect() %>% 
   mutate(microcystis_abundance = round(percent_abundance,4),
-         norm_microcystis_abundance = scale(log(microcystis_abundance)))
+         norm_microcystis_abundance = scales::rescale(log(microcystis_abundance),to=c(0,1)))
 
 nostocales_abundance <- tbl(pg, "tax_abund_from_contig_lca_and_abund") %>% 
   filter(tax_id == 1161,sample %in% local(set_35_samples$SampleID)) %>% 
@@ -69,23 +72,29 @@ samples_for_plot <- set_35_samples %>%
 
 
 ```{r, include = FALSE}
-bloom_metadata <- read_tsv("~/projects/microcystis_genomes_2022/data/env_data/merged_env_data_GLAMR.tsv")
+bloom_metadata <- read_tsv("~/projects/microcystis_genomes_2022/data/env_data/merged_env_data_GLAMR.tsv") %>% 
+  dplyr::rename(NOAA_Site = "NOAA_site")
 ```
+
 ## Bloom summary normalized by year
+Key bloom parameters (chlorophyll, phycocyanin, and particulate microcystin) from the complete weekly monitoring dataset are shown to approximate bloom characteristics for each year. 
+
+In this case, the parameter values were scaled within years to obtain values on a similar scale and highlight differences throughout each bloom.  The y-axis position of sample points corresponds to Microcystis abundance in the metagenomes.
 ```{r echo=FALSE,message=FALSE, warning=FALSE}
 (
   bloom_metadata %>% 
   mutate(year = lubridate::year(collection_date),
          date_same_year = lubridate::`year<-`(collection_date, 2000)) %>% 
-  select(date, year, date_same_year, collection_date, NOAA_site, chlorophyl, ext_phyco, part_microcyst) %>% 
+  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst) %>% 
   pivot_longer(c(chlorophyl, ext_phyco, part_microcyst), names_to = "value_type",values_to = "value") %>% 
   group_by(value_type, year) %>% 
-  mutate(value = scale(value)) %>% 
-  filter(year > 2014, !is.na(year), !is.na(date_same_year)) %>% 
+  mutate(value = scales::rescale(x= log(value),to=c(0,1))) %>% 
+  filter(year > 2014, !is.na(year), !is.na(date_same_year), NOAA_Site %in% samples_for_plot$NOAA_Site) %>% 
   ggplot(aes(date_same_year, value, 
              color = value_type
              )) +
-  geom_smooth(se = FALSE) +
+  #geom_smooth(se = FALSE) +
+    geom_path() +
    geom_point(data = samples_for_plot,
               aes(date_same_year, norm_microcystis_abundance, 
                   sample = SampleID, 
@@ -99,27 +108,31 @@ bloom_metadata <- read_tsv("~/projects/microcystis_genomes_2022/data/env_data/me
     scale_color_manual(values = c("green", "blue", "cyan","grey50", "red", "darkgreen")) + 
   facet_grid(year ~ fct_relevel(NOAA_Site,sites_w_most_samples$NOAA_Site),scales = "free_x") +
   theme_bw() +
-  labs(x = NULL, y= NULL) +
+  labs(x = NULL, y= "log values") +
     theme(axis.text.y = element_blank(),
           axis.ticks.y = element_blank())
 ) %>% plotly::ggplotly()
 ```
 
 ## Bloom summary normalized across all years
+Key bloom parameters (chlorophyll, phycocyanin, and particulate microcystin) from the complete weekly monitoring dataset are shown to approximate bloom characteristics for each year. 
+
+In this case, the parameter values were scaled across all years to obtain values on a similar scale for each parameter and highlight differences between bloom years. The y-axis position of sample points corresponds to Microcystis abundance in the metagenomes.
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 (
   bloom_metadata %>% 
   mutate(year = lubridate::year(collection_date),
          date_same_year = lubridate::`year<-`(collection_date, 2000)) %>% 
-  select(date, year, date_same_year, collection_date, NOAA_site, chlorophyl, ext_phyco, part_microcyst) %>% 
+  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst) %>% 
   pivot_longer(c(chlorophyl, ext_phyco, part_microcyst), names_to = "value_type",values_to = "value") %>% 
   group_by(value_type) %>% 
-  mutate(value = scale(value)) %>% 
-  filter(year > 2014, !is.na(year), !is.na(date_same_year)) %>% 
+  mutate(value = scales::rescale(x= log(value),to=c(0,1))) %>% 
+  filter(year > 2014, !is.na(year), !is.na(date_same_year), NOAA_Site %in% samples_for_plot$NOAA_Site) %>% 
   ggplot(aes(date_same_year, value, 
              color = value_type
              )) +
-  geom_smooth(se = FALSE) +
+    #geom_smooth(se = FALSE,method = "loess", span = 0.5) +
+    geom_path() +
    geom_point(data = samples_for_plot,
               aes(date_same_year, norm_microcystis_abundance, 
                   sample = SampleID, 
@@ -133,13 +146,12 @@ bloom_metadata <- read_tsv("~/projects/microcystis_genomes_2022/data/env_data/me
     scale_color_manual(values = c("green", "blue", "cyan","grey50", "red", "darkgreen")) + 
   facet_grid(year ~ fct_relevel(NOAA_Site,sites_w_most_samples$NOAA_Site),scales = "free_x") +
   theme_bw() +
-  labs(x = NULL, y= NULL) +
+  labs(x = NULL, y= "log values") +
     theme(axis.text.y = element_blank(),
-          axis.ticks.y = element_blank())
+          axis.ticks.y = element_blank()) +
+    coord_cartesian(ylim = c(0,1))
 ) %>% plotly::ggplotly()
 ```
-
-
 
 
 
