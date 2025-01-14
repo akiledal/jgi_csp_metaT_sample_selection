@@ -2,7 +2,7 @@
 title: "JGI CSP metaT sample selection"
 output:
   html_document: 
-    fig_width: 10
+    fig_width: 12
 ---
 
 
