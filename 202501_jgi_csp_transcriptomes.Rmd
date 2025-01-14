@@ -1,8 +1,8 @@
 ---
 title: "JGI CSP metaT sample selection"
 output:
-  html_document:
-    df_print: paged
+  html_document: 
+    fig_width: 10
 ---
 
 
