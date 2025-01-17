@@ -85,8 +85,8 @@ In this case, the parameter values were scaled across all years to obtain values
   bloom_metadata %>% 
   mutate(year = lubridate::year(collection_date),
          date_same_year = lubridate::`year<-`(collection_date, 2000)) %>% 
-  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst) %>% 
-  pivot_longer(c(chlorophyl, ext_phyco, part_microcyst), names_to = "value_type",values_to = "value") %>% 
+  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite) %>% 
+  pivot_longer(c(chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite), names_to = "value_type",values_to = "value") %>% 
   group_by(value_type) %>% 
   mutate(value = scales::rescale(x= log(value),to=c(0,1))) %>% 
   filter(year > 2014, !is.na(year), !is.na(date_same_year), NOAA_Site %in% samples_for_plot$NOAA_Site) %>% 
@@ -105,7 +105,7 @@ In this case, the parameter values were scaled across all years to obtain values
                   include_reason = selection_reason, 
                   who = requested_by, 
                   microcystis_percent = microcystis_abundance), inherit.aes = FALSE, size = 2.5) +
-    scale_color_manual(values = c("green", "blue", "#edbb47","#6c5a8f", "red", "#46874a")) + 
+    scale_color_manual(values = c("green", "blue", "#edbb47","pink","#6c5a8f", "red", "#46874a")) + 
   facet_grid(year ~ fct_relevel(NOAA_Site,sites_w_most_samples$NOAA_Site),scales = "free_x") +
   theme_bw() +
   labs(x = NULL, y= "log values") +
@@ -125,8 +125,8 @@ In this case, the parameter values were scaled within years to obtain values on 
   bloom_metadata %>% 
   mutate(year = lubridate::year(collection_date),
          date_same_year = lubridate::`year<-`(collection_date, 2000)) %>% 
-  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst) %>% 
-  pivot_longer(c(chlorophyl, ext_phyco, part_microcyst), names_to = "value_type",values_to = "value") %>% 
+  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite) %>% 
+  pivot_longer(c(chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite), names_to = "value_type",values_to = "value") %>% 
   group_by(value_type, year) %>% 
   mutate(value = scales::rescale(x= log(value),to=c(0,1))) %>% 
   filter(year > 2014, !is.na(year), !is.na(date_same_year), NOAA_Site %in% samples_for_plot$NOAA_Site) %>% 
@@ -145,7 +145,7 @@ In this case, the parameter values were scaled within years to obtain values on 
                   include_reason = selection_reason, 
                   who = requested_by, 
                   microcystis_percent = microcystis_abundance), inherit.aes = FALSE, size = 2.5) +
-    scale_color_manual(values = c("green", "blue", "#edbb47","#6c5a8f", "red", "#46874a")) + 
+    scale_color_manual(values = c("green", "blue", "#edbb47","pink","#6c5a8f", "red", "#46874a")) +
   facet_grid(year ~ fct_relevel(NOAA_Site,sites_w_most_samples$NOAA_Site),scales = "free_x") +
   theme_bw() +
   labs(x = NULL, y= "log values") +
