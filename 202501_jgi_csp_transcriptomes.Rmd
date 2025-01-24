@@ -30,6 +30,12 @@ options(gargle_oath_cache = "~/GLAMR/.secrets",
 requested_samples <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1EEx7MrQ0Etqqmx0HNvP6We7u3MumdbKs7WQK743HxC8/edit?gid=1556500356#gid=1556500356",sheet = "metaT_requests",range = "A1:H1000") %>% 
   filter(!is.na(glamr_metagenome_id)) %>% 
   write_tsv("requested_samples.tsv")
+
+new_omics_cruise_samples <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1EEx7MrQ0Etqqmx0HNvP6We7u3MumdbKs7WQK743HxC8/edit?gid=1556500356#gid=1556500356",sheet = "for_metaT_selection_2022_omics_cruise_samples") %>%
+  mutate(date = lubridate::ymd(collection_date),
+         date_same_year = lubridate::`year<-`(date, 2000),
+         year = lubridate::year(date)) %>% 
+  write_tsv("for_metaT_selection_2022_omics_cruise_samples.tsv")
 ```
 
 ```{r, include=FALSE}
@@ -41,6 +47,7 @@ set_35_samples <- glamr_pg %>%
   mutate(NOAA_Site = case_when(NOAA_Site == "WE12-S" ~"WE12",
                                NOAA_Site == "WE16-WSW" ~"WE16",
                                .default = NOAA_Site)) %>% 
+  bind_rows(new_omics_cruise_samples) %>% 
   write_tsv("~/projects/glamr_queries_and_analyses/202501_jgi_csp_transcriptomes/set_35_metagenomes.tsv")
 
 microcystis_abundance <- tbl(pg, "tax_abund_from_contig_lca_and_abund") %>% 
@@ -67,7 +74,10 @@ samples_for_plot <- set_35_samples %>%
   mutate(include = if_else(is.na(include), "no", include)) %>% 
   filter(!is.na(year)) %>% 
   left_join(microcystis_abundance %>% select(SampleID = "sample", microcystis_abundance, norm_microcystis_abundance)) %>% 
-  left_join(nostocales_abundance %>% select(SampleID = "sample", nostocales_abundance))
+  left_join(nostocales_abundance %>% select(SampleID = "sample", nostocales_abundance)) %>% 
+  mutate(norm_microcystis_abundance = if_else(is.na(norm_microcystis_abundance), 0, norm_microcystis_abundance),
+         microcystis_abundance = if_else(is.na(microcystis_abundance), 0, microcystis_abundance),
+         nostocales_abundance = if_else(is.na(nostocales_abundance), 0, nostocales_abundance))
 ```
 
 
