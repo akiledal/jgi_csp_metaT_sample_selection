@@ -5,13 +5,13 @@ samp_506	2021-09-21T11:17:00Z	WE9	3	N-affinity work	yes	Jenan, Anders, Sara	NA
 samp_500	2021-08-03T11:00:00Z	WE12-S	3	N-affinity work (secondary priority)	maybe	Anders	NA
 samp_501	2021-08-31T11:19:59Z	WE2	3	N-affinity work (secondary priority)	maybe	Anders	NA
 samp_505	2021-09-21T08:35:00Z	WE2	3	N-affinity work (secondary priority)	maybe	Anders	NA
-samp_447	2015-08-10T08:37:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_452	2016-08-22T09:22:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_456	2017-08-28T13:31:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_457	2018-08-13T12:27:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_458	2018-08-20T13:01:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_464	2019-08-12T12:39:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
-samp_473	2020-07-28T11:45:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
+samp_447	2015-08-10T08:37:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_452	2016-08-22T09:22:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_456	2017-08-28T13:31:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_457	2018-08-13T12:27:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_458	2018-08-20T13:01:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_464	2019-08-12T12:39:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
+samp_473	2020-07-28T11:45:00Z	WE2	3	peak bloom WE2 across years	no	Anders	NA
 samp_488	2021-08-16T12:04:00Z	WE2	3	peak bloom WE2 across years	maybe	Anders	NA
 samp_498	2021-08-03T11:58:00Z	WE2	3	pair with all metaG samples from WE2 in 2021	maybe	Anders	NA
 samp_494	2021-07-14T12:30:00Z	WE2	3	pair with all metaG samples from WE2 in 2021	maybe	Anders	NA

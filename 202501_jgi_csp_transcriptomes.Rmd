@@ -155,6 +155,39 @@ In this case, the parameter values were scaled within years to obtain values on 
 ```
 
 
+Actual values of key bloom parameters
+```{r}
+bloom_metadata %>% 
+  mutate(year = lubridate::year(collection_date),
+         date_same_year = lubridate::`year<-`(collection_date, 2000)) %>% 
+  select(date, year, date_same_year, collection_date, NOAA_Site, chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite,temp) %>% 
+  pivot_longer(c(chlorophyl, ext_phyco, part_microcyst,Nitrate_Nitrite, temp), names_to = "value_type",values_to = "value") %>% 
+  #group_by(value_type) %>% 
+  #mutate(value = scales::rescale(x= log(value),to=c(0,1))) %>% 
+  filter(year > 2015, !is.na(year), !is.na(date_same_year), NOAA_Site %in% samples_for_plot$NOAA_Site) %>% 
+  ggplot(aes(date_same_year, value, 
+             #color = NOAA_Site
+             )) +
+  #geom_path() +  
+  geom_smooth(method = "loess", span = 0.5,
+              #se = FALSE
+              ) +
+    #scale_color_manual(values = c("green", "blue", "#edbb47","pink","#6c5a8f", "red", "#46874a")) + 
+  facet_grid(value_type ~ year,scales = "free_y") +
+  #scale_y_log10() +
+  theme_bw() +
+  labs(x = NULL, y= "log values") 
+  # ggh4x::facetted_pos_scales(y = list(scale_y_continuous(limits = c(0,200)),
+  #                                     scale_y_continuous(limits= c(1,200)),
+  #                                     scale_y_continuous(limits= c(1,10)),
+  #                                     scale_y_continuous(limits= c(1,20))))
+    #theme(axis.text.y = element_blank(),
+    #      axis.ticks.y = element_blank()) +
+    #coord_cartesian(ylim = c(0,1))
+```
+
+
+
 
 
 
