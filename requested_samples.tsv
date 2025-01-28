@@ -1,108 +1,22 @@
 glamr_metagenome_id	date	site	num_filters_remaining	num_metaT_replicates	selection_reason	include	requested_by
-samp_499		WE16-WSW		3	N-affinity work; Best 2021/2022 read mapping results to STX biosynthesis operon (80.65% coverage)	yes	Jenan, Anders, Sara, Paul
-samp_503		WE9		3	N-affinity work	yes	Jenan, Anders, Sara
-samp_506		WE9		3	N-affinity work	yes	Jenan, Anders, Sara
-samp_505		WE2		3	N-affinity work (secondary priority)	maybe	Anders
-samp_500		WE12-S		3	N-affinity work (secondary priority)	maybe	Anders
-samp_498		WE2		3	pair with all metaG samples from WE2 in 2021	maybe	Anders
-samp_494		WE2		3	pair with all metaG samples from WE2 in 2021	maybe	Anders
-samp_501		WE2		3	N-affinity work (secondary priority)	maybe	Anders
-samp_496		WE9		3	WE9 pre-peak in 2021	maybe	Anders
-samp_491		WE2		3	pair with all metaG samples from WE2 in 2021	maybe	Anders
-samp_488		WE2		3	peak bloom WE2 across years	maybe	Anders
-samp_459		WE2		3	pair with all metaG samples from WE2 in 2019	maybe	Anders
-samp_467		WE2		3	pair with all metaG samples from WE2 in 2019	maybe	Anders
-E2022-2003		WE9		NA	NA	NA	NA
-samp_447		WE2		3	peak bloom WE2 across years	no	Anders
-samp_452		WE2		3	peak bloom WE2 across years	no	Anders
-samp_456		WE2		3	peak bloom WE2 across years	no	Anders
-samp_457		WE2		3	peak bloom WE2 across years	no	Anders
-samp_458		WE2		3	peak bloom WE2 across years	no	Anders
-samp_464		WE2		3	peak bloom WE2 across years	no	Anders
-samp_473		WE2		3	peak bloom WE2 across years	no	Anders
-samp_447		WE2		NA	NA	NA	NA
-samp_448		WE12		NA	NA	NA	NA
-samp_449		WE15		NA	NA	NA	NA
-samp_450		WE14		NA	NA	NA	NA
-samp_451		WE12		NA	NA	NA	NA
-samp_452		WE2		NA	NA	NA	NA
-samp_453		WE12		NA	NA	NA	NA
-samp_454		WE15		NA	NA	NA	NA
-samp_455		WE4		NA	NA	NA	NA
-samp_456		WE2		NA	NA	NA	NA
-samp_457		WE2		NA	NA	NA	NA
-samp_458		WE2		NA	NA	NA	NA
-samp_459		WE2		NA	NA	NA	NA
-samp_460		WE12		NA	NA	NA	NA
-samp_461		WE4		NA	NA	NA	NA
-samp_462		WE2		NA	NA	NA	NA
-samp_463		WE12		NA	NA	NA	NA
-samp_464		WE2		NA	NA	NA	NA
-samp_465		WE12		NA	NA	NA	NA
-samp_466		WE4		NA	NA	NA	NA
-samp_467		WE2		NA	NA	NA	NA
-samp_468		WE12		NA	NA	NA	NA
-samp_469		WE4		NA	NA	NA	NA
-samp_470		WE2		NA	NA	NA	NA
-samp_471		WE8		NA	NA	NA	NA
-samp_472		WE12		NA	NA	NA	NA
-samp_473		WE2		NA	NA	NA	NA
-samp_474		WE4		NA	NA	NA	NA
-samp_475		WE9		NA	NA	NA	NA
-samp_476		WE12		NA	NA	NA	NA
-samp_477		WE2		NA	NA	NA	NA
-samp_478		WE4		NA	NA	NA	NA
-samp_479		WE9		NA	NA	NA	NA
-samp_480		WE12		NA	NA	NA	NA
-samp_481		WE2		NA	NA	NA	NA
-samp_482		WE4		NA	NA	NA	NA
-samp_483		WE9		NA	NA	NA	NA
-samp_484		WE12		NA	NA	NA	NA
-samp_485		WE2		NA	NA	NA	NA
-samp_486		WE4		NA	NA	NA	NA
-samp_487		WE12		NA	NA	NA	NA
-samp_488		WE2		NA	NA	NA	NA
-samp_489		WE4		NA	NA	NA	NA
-samp_490		WE12		NA	NA	NA	NA
-samp_491		WE2		NA	NA	NA	NA
-samp_492		WE4		NA	NA	NA	NA
-samp_493		WE9		NA	NA	NA	NA
-samp_494		WE2		NA	NA	NA	NA
-samp_495		WE4		NA	NA	NA	NA
-samp_496		WE9		NA	NA	NA	NA
-samp_497		WE12		NA	NA	NA	NA
-samp_498		WE2		NA	NA	NA	NA
-samp_499		WE16-WSW		NA	NA	NA	NA
-samp_500		WE12-S		NA	NA	NA	NA
-samp_501		WE2		NA	NA	NA	NA
-samp_502		WE4		NA	NA	NA	NA
-samp_503		WE9		NA	NA	NA	NA
-samp_504		WE12		NA	NA	NA	NA
-samp_505		WE2		NA	NA	NA	NA
-samp_506		WE9		NA	NA	NA	NA
-samp_507		WE12		NA	NA	NA	NA
-samp_508		WE12		NA	NA	NA	NA
-samp_509		WE4		NA	NA	NA	NA
-samp_510		WE4		NA	NA	NA	NA
-samp_511		WE12		NA	NA	NA	NA
-samp_512		WE4		NA	NA	NA	NA
-samp_513		WE4		NA	NA	NA	NA
-samp_514		WE4		NA	NA	NA	NA
-samp_515		WE12		NA	NA	NA	NA
-samp_516		WE4		NA	NA	NA	NA
-samp_3935		WE12		NA	NA	NA	NA
-samp_3936		WE12		NA	NA	NA	NA
-samp_3937		WE12		NA	NA	NA	NA
-samp_3938		WE12		NA	NA	NA	NA
-samp_4304		NA		NA	NA	NA	NA
-samp_4305		NA		NA	NA	NA	NA
-samp_4306		NA		NA	NA	NA	NA
-samp_4333		NA		NA	NA	NA	NA
-samp_4489		NA		NA	NA	NA	NA
-samp_4490		NA		NA	NA	NA	NA
-samp_5896		NA		NA	NA	NA	NA
-samp_5897		NA		NA	NA	NA	NA
-samp_5898		NA		NA	NA	NA	NA
-samp_5899		NA		NA	NA	NA	NA
-samp_5900		NA		NA	NA	NA	NA
-samp_5901		NA		NA	NA	NA	NA
+samp_499		WE16-WSW	3	3	N-affinity work; Best 2021/2022 read mapping results to STX biosynthesis operon (80.65% coverage)	yes	Jenan, Anders, Sara, Paul
+samp_503		WE9	2	3	N-affinity work	yes	Jenan, Anders, Sara
+samp_506		WE9	1	3	N-affinity work	yes	Jenan, Anders, Sara
+samp_505		WE2	3	3	N-affinity work (secondary priority)	maybe	Anders
+samp_500		WE12-S	3	3	N-affinity work (secondary priority)	maybe	Anders
+samp_498		WE2	4	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_494		WE2	3	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_501		WE2	2	3	N-affinity work (secondary priority)	maybe	Anders
+samp_496		WE9	1	3	WE9 pre-peak in 2021	maybe	Anders
+samp_491		WE2	1	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_488		WE2	NA	3	peak bloom WE2 across years	maybe	Anders
+samp_459		WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
+samp_467		WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
+E2022-2003		WE9	4	NA	NA	NA	NA
+samp_447		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_452		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_456		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_457		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_458		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_464		WE2	NA	3	peak bloom WE2 across years	no	Anders
+samp_473		WE2	NA	3	peak bloom WE2 across years	no	Anders
