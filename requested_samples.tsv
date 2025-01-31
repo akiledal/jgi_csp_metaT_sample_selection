@@ -1,14 +1,14 @@
 glamr_metagenome_id	date	site	num_filters_remaining	num_metaT_replicates	selection_reason	include	requested_by
-samp_499		WE16-WSW	3	3	N-affinity work; Best 2021/2022 read mapping results to STX biosynthesis operon (80.65% coverage)	yes	Jenan, Anders, Sara, Paul
-samp_503		WE9	2	3	N-affinity work	yes	Jenan, Anders, Sara
-samp_506		WE9	1	3	N-affinity work	yes	Jenan, Anders, Sara
-samp_505		WE2	3	3	N-affinity work (secondary priority)	maybe	Anders
-samp_500		WE12-S	3	3	N-affinity work (secondary priority)	maybe	Anders
-samp_498		WE2	4	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
-samp_494		WE2	3	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
-samp_501		WE2	2	3	N-affinity work (secondary priority)	maybe	Anders
-samp_496		WE9	1	3	WE9 pre-peak in 2021	maybe	Anders
-samp_491		WE2	1	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_499		WE16-WSW	NA	3	N-affinity work; Best 2021/2022 read mapping results to STX biosynthesis operon (80.65% coverage)	yes	Jenan, Anders, Sara, Paul
+samp_503		WE9	NA	3	N-affinity work	yes	Jenan, Anders, Sara
+samp_506		WE9	NA	3	N-affinity work	yes	Jenan, Anders, Sara
+samp_505		WE2	NA	3	N-affinity work (secondary priority)	maybe	Anders
+samp_500		WE12-S	NA	3	N-affinity work (secondary priority)	maybe	Anders
+samp_498		WE2	NA	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_494		WE2	NA	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
+samp_501		WE2	NA	3	N-affinity work (secondary priority)	maybe	Anders
+samp_496		WE9	NA	3	WE9 pre-peak in 2021	maybe	Anders
+samp_491		WE2	NA	3	pair with all metaG samples from WE2 in 2021	maybe	Anders
 samp_488		WE2	NA	3	peak bloom WE2 across years	maybe	Anders
 samp_459		WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
 samp_467		WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
