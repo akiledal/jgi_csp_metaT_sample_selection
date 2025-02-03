@@ -12,15 +12,15 @@ samp_491	2021-06-08T12:49:59Z	WE2	1	3	pair with all metaG samples from WE2 in 20
 samp_488	2021-08-16T12:04:00Z	WE2	NA	3	peak bloom WE2 across years	maybe	Anders
 samp_459	2019-07-01T12:52:00Z	WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
 samp_467	2019-09-03T12:55:00Z	WE2	NA	3	pair with all metaG samples from WE2 in 2019	maybe	Anders
-we2-1	NA	#REF!	NA	3	NA	yes	NA
-we2-2	NA	#N/A	NA	3	NA	maybe	NA
-we2-3	NA	#N/A	NA	3	NA	maybe	NA
-we2-4	NA	#N/A	NA	3	NA	maybe	NA
-we12-1	NA	#N/A	NA	3	NA	maybe	NA
-we12-2	NA	#N/A	NA	3	NA	maybe	NA
-we12-3	NA	#N/A	NA	3	NA	maybe	NA
-we9-1	NA	#N/A	NA	3	NA	maybe	NA
-we9-2	NA	#N/A	NA	3	NA	maybe	NA
+we2-june	NA	#REF!	NA	3	NA	yes	NA
+we2-july	NA	#N/A	NA	3	NA	maybe	NA
+we2-aug	NA	#N/A	NA	3	NA	maybe	NA
+we2-sept	NA	#N/A	NA	3	NA	maybe	NA
+we12-jul	NA	#N/A	NA	3	NA	maybe	NA
+we12-aug	NA	#N/A	NA	3	NA	maybe	NA
+we12-sept	NA	#N/A	NA	3	NA	maybe	NA
+we9-july	NA	#N/A	NA	3	NA	maybe	NA
+we9-aug	NA	#N/A	NA	3	NA	maybe	NA
 we9-3	NA	#N/A	NA	3	NA	maybe	NA
 samp_447	2015-08-10T08:37:00Z	WE2	NA	3	peak bloom WE2 across years	no	Anders
 samp_452	2016-08-22T09:22:00Z	WE2	NA	3	peak bloom WE2 across years	no	Anders
