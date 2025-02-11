@@ -27,7 +27,7 @@ options(gargle_oath_cache = "~/GLAMR/.secrets",
         use_oob = TRUE,
         gargle_oauth_client_type = "web")
 
-requested_samples <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1EEx7MrQ0Etqqmx0HNvP6We7u3MumdbKs7WQK743HxC8/edit?gid=1556500356#gid=1556500356",sheet = "metaT_requests",range = "A1:H1000") %>% 
+requested_samples <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1EEx7MrQ0Etqqmx0HNvP6We7u3MumdbKs7WQK743HxC8/edit?gid=1556500356#gid=1556500356",sheet = "metaT_requests",range = "A1:I1000") %>% 
   filter(!is.na(glamr_metagenome_id)) %>% 
   write_tsv("requested_samples.tsv")
 
@@ -35,6 +35,7 @@ new_omics_cruise_samples <- googlesheets4::read_sheet("https://docs.google.com/s
   mutate(date = lubridate::ymd(collection_date),
          date_same_year = lubridate::`year<-`(date, 2000),
          year = lubridate::year(date)) %>% 
+  #filter(!SampleID %in% requested_samples$glamr_metagenome_id) %>% # include only samples not already listed in requests
   write_tsv("for_metaT_selection_2022_omics_cruise_samples.tsv")
 ```
 
@@ -43,6 +44,7 @@ glamr_pg <- tbl(pg, "glamr_samples")
 
 set_35_samples <- glamr_pg %>% 
   filter(StudyID == "set_35") %>% 
+  select(SampleID, date, year, date_same_year, collection_date, NOAA_Site, chlorophyll, ext_phyco, part_microcyst,Nitrate_Nitrite) %>% 
   collect() %>% 
   mutate(NOAA_Site = case_when(NOAA_Site == "WE12-S" ~"WE12",
                                NOAA_Site == "WE16-WSW" ~"WE16",
@@ -115,7 +117,7 @@ In this case, the parameter values were scaled across all years to obtain values
                   include_reason = selection_reason, 
                   who = requested_by, 
                   microcystis_percent = microcystis_abundance), inherit.aes = FALSE, size = 2.5) +
-    scale_color_manual(values = c("green", "blue", "#edbb47","pink","#6c5a8f", "red", "#46874a")) + 
+    scale_color_manual(values = c("#46874a", "blue", "#edbb47","pink","#6c5a8f", "red", "green")) + 
   facet_grid(year ~ fct_relevel(NOAA_Site,sites_w_most_samples$NOAA_Site),scales = "free_x") +
   theme_bw() +
   labs(x = NULL, y= "log values") +
