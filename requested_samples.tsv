@@ -1,14 +1,14 @@
 glamr_metagenome_id	date	site	num_filters_remaining	num_metaT_replicates	selection_reason	include	requested_by	notes
 samp_499		WE16-WSW	3	3		yes	Jenan, Anders, Sara, Paul	NA
-samp_503		WE9	2	3		no	Jenan, Anders, Sara	NA
-samp_506		WE9	1	3		no	Jenan, Anders, Sara	NA
+samp_503		WE9	2	3		no	Jenan, Anders, Sara	not enough filters?
+samp_506		WE9	1	3		no	Jenan, Anders, Sara	not enough filters?
 samp_505		WE2	3	3		maybe	Anders	NA
 samp_500		WE12-S	3	3		maybe	Anders	NA
 samp_498		WE2	4	3		maybe	Anders	NA
 samp_494		WE2	3	3		maybe	Anders	NA
-samp_501		WE2	2	3		no	Anders	NA
-samp_496		WE9	1	3		no	Anders	NA
-samp_491		WE2	1	3		no	Anders	NA
+samp_501		WE2	2	3		no	Anders	not enough filters?
+samp_496		WE9	1	3		no	Anders	not enough filters?
+samp_491		WE2	1	3		no	Anders	not enough filters?
 samp_488		WE2	NA	3		maybe	Anders	NA
 samp_459		WE2	NA	3		maybe	Anders	NA
 samp_467		WE2	NA	3		maybe	Anders	NA
