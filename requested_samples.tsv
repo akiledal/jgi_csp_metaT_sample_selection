@@ -1,34 +1,37 @@
-glamr_metagenome_id	date	site	num_filters_remaining	num_metaT_replicates	selection_reason	include	requested_by	notes
-samp_499		WE16-WSW	4	3		yes	Jenan, Anders, Sara, Paul	NA
-samp_506		WE9	4	3		yes	Jenan, Anders, Sara	not enough filters?
-samp_503		WE9	4	3		yes	Jenan, Anders, Sara	not enough filters?
-E2022-2001		WE2	4	3		yes	Anders, Rob, Greg	NA
-E2022-2005		WE2	4	3		yes	Anders, Rob, Greg	NA
-E2022-2009		WE2	4	3		yes	Anders, Rob, Greg	NA
-E2022-2013		WE2	4	3		yes	Anders, Rob, Greg	NA
-E2022-2008		WE12	4	3		yes	Anders, Rob, Greg	NA
-E2022-2012		WE12	4	3		yes	Anders, Rob, Greg	NA
-E2022-2016		WE12	4	3		yes	Anders, Rob, Greg	NA
-E2022-2007		WE9	4	3		yes	Anders, Rob, Greg	NA
-E2022-2011		WE9	4	3		yes	Anders, Rob, Greg	NA
-E2022-2015		WE9	4	3		yes	Anders, Rob, Greg	NA
-samp_505		WE2	5	3		yes	Anders	NA
-samp_501		WE2	4	3		yes	Anders	NA
-samp_494		WE2	4	3		yes	Anders	NA
-samp_498		WE2	4	3		yes	Anders	NA
-samp_496		WE9	5	3		yes	Anders	NA
-samp_459		WE2	NA	3		no	Anders	NA
-samp_467		WE2	NA	3		no	Anders	NA
-E2022-2010		WE4	4	3		maybe	Anders	NA
-E2022-2006		WE4	4	3		no	Anders	NA
-E2022-2014		WE4	4	3		no	Anders	NA
-samp_491		WE2	0	3		no	Anders	not enough filters?
-samp_488		WE2	NA	3		no	Anders	not enough filters?
-samp_500		WE12-S	0	3		no	Anders	not enough filters?
-samp_447		WE2	NA	3		no	Anders	NA
-samp_452		WE2	NA	3		no	Anders	NA
-samp_456		WE2	NA	3		no	Anders	NA
-samp_457		WE2	NA	3		no	Anders	NA
-samp_458		WE2	NA	3		no	Anders	NA
-samp_464		WE2	NA	3		no	Anders	NA
-samp_473		WE2	NA	3		no	Anders	NA
+glamr_metagenome_id	sortchem	date	site	size_frac_up	num_filters_remaining	num_metaT_replicates	selection_reason	include	requested_by	notes
+samp_499	E2021-2010		WE16-WSW	100	4	3		yes	Jenan, Anders, Sara, Paul	NA
+samp_506	E2021-2018		WE9	100	4	3		yes	Jenan, Anders, Sara	not enough filters?
+samp_503	E2021-2014		WE9	100	3	3		yes	Jenan, Anders, Sara	not enough filters?
+E2022-2001	NA		WE2	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2005	NA		WE2	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2009	NA		WE2	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2013	NA		WE2	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2008	NA		WE12	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2012	NA		WE12	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2016	NA		WE12	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2007	NA		WE9	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2011	NA		WE9	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2015	NA		WE9	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2003	NA		WE9	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2004	NA		WE12	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2010	NA		WE4	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2006	NA		WE4	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2014	NA		WE4	0.22	4	3		yes	Anders, Rob, Greg	NA
+E2022-2002	NA		WE4	0.22	4	3		yes	Anders, Rob, Greg	NA
+samp_505	E2021-2016		WE2	0.22	5	3		no	Anders	NA
+samp_501	E2021-2012		WE2	0.22	4	3		no	Anders	NA
+samp_494	E2021-2004		WE2	0.22	4	3		no	Anders	NA
+samp_498	E2021-2008		WE2	0.22	4	3		no	Anders	NA
+samp_496	E2021-2006		WE9	0.22	5	3		no	Anders	NA
+samp_459	E2019-0010		WE2	0.22	NA	3		no	Anders	NA
+samp_467	E2019-0037		WE2	0.22	NA	3		no	Anders	NA
+samp_491	NA		WE2	0.22	0	3		no	Anders	not enough filters?
+samp_488	NA		WE2	0.22	NA	3		no	Anders	not enough filters?
+samp_500	NA		WE12-S	0.22	0	3		no	Anders	not enough filters?
+samp_447	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_452	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_456	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_457	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_458	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_464	NA		WE2	0.22	NA	3		no	Anders	NA
+samp_473	NA		WE2	0.22	NA	3		no	Anders	NA
