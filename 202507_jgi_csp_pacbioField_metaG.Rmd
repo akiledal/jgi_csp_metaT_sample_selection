@@ -1,5 +1,5 @@
 ---
-title: "JGI CSP metaT sample selection"
+title: "JGI CSP PacBio field metagenome sample selection"
 output:
   html_document: 
     fig_width: 12
@@ -19,8 +19,9 @@ conflicted::conflicts_prefer(dplyr::select(), dplyr::rename(), dplyr::filter(), 
 pg <- DBI::dbConnect(RPostgres::Postgres(),dbname = "glamr_data", host = "cayman.earth.lsa.umich.edu", port = "5432", user = "glamr_admin", password = "glamr2023")
 ```
 
+
+```{r include=FALSE}
 ## Field data
-```{r}
 field_2023_provisional <- read_csv("field_data/2023_WLE_Weekly_Datashare_CSV.csv") %>% 
   mutate(across(where(is.character), ~ replace(., . %in% c("nd", "ns", "N/A", "NS", "ND"), NA)),
          across(where(is.character), ~ if_else(str_detect(., "<|>|=|\\*"), str_remove(., "<|>|=|\\*"), .)),
